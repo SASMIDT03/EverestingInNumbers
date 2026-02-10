@@ -10,8 +10,8 @@ let inputDate: RideInformation = {
     climbingSpeed: 15,
     descendingSpeed: 40,
     climbingWatts: 150,
-    numberOfStops: 20,
-    durationOfStops: 120,
+    numberOfStops: 10,
+    durationOfStops: 300,
 }
 
 const result: EverestingStats = CalculateEverestingStats(inputDate);
@@ -40,5 +40,13 @@ describe("Everesting Calculations", () => {
 
     it("Should have total descending time 18483 for distance 2.03 and descendingspeed 40", () => {
         expect(result.totalDescendingTime).toBe(18483);
+    })
+
+    it("Should have total stop time 3000", () => {
+        expect(result.totalPauseTime).toBe(3000);
+    })
+
+    it("Should have total time 70771", () => {
+        expect(result.totalTime).toBe(70771);
     })
 })
