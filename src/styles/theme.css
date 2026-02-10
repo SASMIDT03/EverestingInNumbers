@@ -1,7 +1,8 @@
 :root {
     --primary: #ffffff;
     --primary-shade: #dfe0e4;
-    --dark-shade: #bcbcbf
+    --dark-shade: #bcbcbf;
+    --dark: #303030;
 
 }
 
@@ -9,4 +10,5 @@
     --color-primary: var(--primary);
     --color-primary-shade: var(--primary-shade);
     --color-dark-shade: var(--dark-shade);
+    --color-dark: var(--dark);
 }
