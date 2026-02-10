@@ -1,0 +1,12 @@
+:root {
+    --primary: #ffffff;
+    --primary-shade: #dfe0e4;
+    --dark-shade: #bcbcbf
+
+}
+
+@theme {
+    --color-primary: var(--primary);
+    --color-primary-shade: var(--primary-shade);
+    --color-dark-shade: var(--dark-shade);
+}
