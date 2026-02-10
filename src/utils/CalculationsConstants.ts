@@ -1,0 +1,9 @@
+export const CalculationsConstants = {
+    HEIGHT_OF_MOUNT_EVEREST: 8849,
+    GRAVITY_CONSTANT: 9.81,
+    HUMAN_EFFICIENCY: 0.22,
+    ROLLING_RESISTANCE:  0.004,
+    AIR_DENSITY: 1.225,
+    CdA: 0.32,
+    JOULE_PR_KCAL: 4184,
+}

@@ -49,4 +49,8 @@ describe("Everesting Calculations", () => {
     it("Should have total time 70771", () => {
         expect(result.totalTime).toBe(70771);
     })
+
+    it("Should have energy use 7379", () => {
+        expect(result.totalEnergy).toBe(7379);
+    })
 })
