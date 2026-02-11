@@ -1,4 +1,5 @@
 import logo from './assets/ein.png';
+import {RouteForm} from "./components/RouteForm.tsx";
 
 export default function App() {
     return (
@@ -20,6 +21,11 @@ export default function App() {
                     transition-all duration-200
                     ">
             </input>
+
+            <div className="flex flex-row items-center">
+                <RouteForm />
+                <RouteForm />
+            </div>
         </div>
     )
 }
