@@ -1,8 +1,9 @@
 :root {
     --primary: #ffffff;
-    --primary-shade: #dfe0e4;
+    --primary-shade: #E5E5E5;
     --dark-shade: #bcbcbf;
     --dark: #303030;
+    --secondary: #F3F3F5;
 
 }
 
@@ -11,4 +12,5 @@
     --color-primary-shade: var(--primary-shade);
     --color-dark-shade: var(--dark-shade);
     --color-dark: var(--dark);
+    --color-secondary: var(--secondary);
 }
