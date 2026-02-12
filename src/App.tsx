@@ -1,7 +1,13 @@
 import logo from './assets/ein.png';
 import {RouteForm} from "./components/RouteForm.tsx";
+import type {RideInformation} from "./utils/types/RideInformation.ts";
 
 export default function App() {
+
+    const handleCalculation = (date: RideInformation) => {
+        console.log("App recievd data: ", date);
+    }
+
     return (
         <div className="flex flex-col items-center">
             <header className="
@@ -23,8 +29,8 @@ export default function App() {
             </input>
 
             <div className="flex flex-row items-center">
-                <RouteForm />
-                <RouteForm />
+                <RouteForm onCalculate={handleCalculation} />
+                <RouteForm onCalculate={handleCalculation} />
             </div>
         </div>
     )
