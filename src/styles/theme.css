@@ -3,6 +3,7 @@
     --primary-shade: #E5E5E5;
     --dark-shade: #bcbcbf;
     --dark: #303030;
+    --dark-2: #242424;
     --secondary: #F3F3F5;
 
 }
@@ -12,5 +13,9 @@
     --color-primary-shade: var(--primary-shade);
     --color-dark-shade: var(--dark-shade);
     --color-dark: var(--dark);
+    --color-dark-2: var(--dark-2);
     --color-secondary: var(--secondary);
+
+    /* Fonts */
+    --font-sans: "Ubuntu", sans-serif;
 }
