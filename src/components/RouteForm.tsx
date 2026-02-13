@@ -26,7 +26,7 @@ export function RouteForm(props: RouteFormProps) {
     return (
         <div className="
             bg-primary border-1 border-primary-shade rounded-lg
-            p-6 m-6
+            p-6 m-6 w-[30vw]
             ">
             <div>Route Information</div>
             <div>
