@@ -1,11 +1,18 @@
 import logo from './assets/ein.png';
 import {RouteForm} from "./components/RouteForm.tsx";
 import type {RideInformation} from "./utils/types/RideInformation.ts";
+import {StatsDisplay} from "./components/StatsDisplay.tsx";
+import {useState} from "react";
+import type {EverestingStats} from "./utils/types/EverestingStats.ts";
+import { CalculateEverestingStats } from "./utils/EverestingCalculator.ts";
 
 export default function App() {
 
-    const handleCalculation = (date: RideInformation) => {
-        console.log("App recievd data: ", date);
+    const [results, setResults] = useState<EverestingStats | null>(null);
+
+    const handleCalculation = (data: RideInformation) => {
+        console.log("App recievd data: ", data);
+        setResults(CalculateEverestingStats(data))
     }
 
     return (
@@ -20,7 +27,7 @@ export default function App() {
                 placeholder="https://www.strava.com/segments/37032431"
                 className="
                     bg-primary border-1 border-primary-shade rounded-lg
-                    w-[75vw] h-[5vh] p-3
+                    w-[70vw] h-[5vh] p-3
                     outline-none
                     focus:ring-2
                     focus:ring-dark-shade
@@ -30,7 +37,7 @@ export default function App() {
 
             <div className="flex flex-row items-center">
                 <RouteForm onCalculate={handleCalculation} />
-                <RouteForm onCalculate={handleCalculation} />
+                <StatsDisplay stats={results} />
             </div>
         </div>
     )
