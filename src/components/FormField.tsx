@@ -2,6 +2,7 @@ type FormFieldProps = {
     displayText: string
     placeholderText: string
     onChange: (value: number) => void
+    subText?: string
 }
 
 export function FormField(props: FormFieldProps) {
@@ -22,6 +23,10 @@ export function FormField(props: FormFieldProps) {
                     hover:border-1 hover:border-dark
                     "
             />
+
+            <div className="text-dark-shade text-sm pl-2">{props.subText}</div>
+
+
         </div>
     )
 }

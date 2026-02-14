@@ -37,7 +37,8 @@ export function RouteForm(props: RouteFormProps) {
                         <FormField displayText={"Avg. climbing speed (km/h)"} placeholderText={"15km/h"}
                                    onChange={(value) => updateField("climbingSpeed", value)}/>
                         <FormField displayText={"Avg. climbing watts (w)"} placeholderText={"200w"}
-                                   onChange={(value) => updateField("climbingWatts", value)}/>
+                                   onChange={(value) => updateField("climbingWatts", value)}
+                                   subText={"Not required"}/>
                         <FormField displayText={"Number of rest stops"} placeholderText={"0"}
                                    onChange={(value) => updateField("numberOfStops", value)}/>
 
