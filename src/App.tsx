@@ -18,8 +18,8 @@ export default function App() {
     return (
         <div className="flex flex-col items-center">
             <header className="
-                w-full h-[10vh] border-b-1 border-b-primary-shade
-                flex justify-center">
+                w-full h-[12vh] border-b-1 border-b-primary-shade
+                flex justify-center p-1">
                 <img src={logo} alt="ein" className="h-full" />
             </header>
             <input
@@ -32,6 +32,7 @@ export default function App() {
                     focus:ring-2
                     focus:ring-dark-shade
                     transition-all duration-200
+                    m-5
                     ">
             </input>
 
