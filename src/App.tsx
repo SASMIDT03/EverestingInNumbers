@@ -1,17 +1,17 @@
 import logo from './assets/ein.png';
 import {RouteForm} from "./components/RouteForm.tsx";
 import type {RideInformation} from "./utils/types/RideInformation.ts";
+import type {EverestingStats} from "./utils/types/EverestingStats.ts";
 import {StatsDisplay} from "./components/StatsDisplay.tsx";
 import {useState} from "react";
-import type {EverestingStats} from "./utils/types/EverestingStats.ts";
 import { CalculateEverestingStats } from "./utils/EverestingCalculator.ts";
 
-export default function App() {
+function App() {
 
     const [results, setResults] = useState<EverestingStats | null>(null);
 
     const handleCalculation = (data: RideInformation) => {
-        console.log("App recievd data: ", data);
+        console.log("App received data: ", data);
         setResults(CalculateEverestingStats(data))
     }
 
@@ -20,11 +20,13 @@ export default function App() {
             <header className="
                 w-full h-[12vh] border-b-1 border-b-primary-shade
                 flex justify-center p-1">
-                <img src={logo} alt="ein" className="h-full" />
+                <img src={logo} alt="ein" className="h-full"/>
             </header>
+            {/*
             <input
                 type="text"
                 placeholder="https://www.strava.com/segments/37032431"
+                onChange={(e) => setSegmentUrl(e.target.value)}
                 className="
                     bg-primary border-1 border-primary-shade rounded-lg
                     w-[70vw] h-[5vh] p-3
@@ -35,11 +37,14 @@ export default function App() {
                     m-5
                     ">
             </input>
+            */}
 
             <div className="flex flex-row items-center">
-                <RouteForm onCalculate={handleCalculation} />
-                <StatsDisplay stats={results} />
+                <RouteForm onCalculate={handleCalculation}/>
+                <StatsDisplay stats={results}/>
             </div>
         </div>
     )
 }
+
+export default App
