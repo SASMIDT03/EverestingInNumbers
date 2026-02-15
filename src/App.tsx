@@ -39,7 +39,7 @@ function App() {
             </input>
             */}
 
-            <div className="flex flex-row items-center">
+            <div className="flex flex-row items-stretch">
                 <RouteForm onCalculate={handleCalculation}/>
                 <StatsDisplay stats={results}/>
             </div>
