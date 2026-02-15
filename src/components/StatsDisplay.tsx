@@ -1,4 +1,5 @@
 import type {EverestingStats} from "../utils/types/EverestingStats.ts";
+import { formatTime } from "../utils/Formater.ts";
 import {StatsCard} from "./StatsCard.tsx";
 import DistanceIcon from "../assets/distance.svg"
 import LapsIcon from "../assets/repeat.svg"
@@ -32,8 +33,8 @@ export function StatsDisplay( stats: StatsDisplayProps) {
                 ">
                 <StatsCard mainText={ stats.stats!.totalDistance.toString() + "km"} iconUrl={DistanceIcon} iconAlt={"Distance icon"}/>
                 <StatsCard mainText={ stats.stats!.totalNumberOfLaps.toString() } iconUrl={LapsIcon} iconAlt={"Laps icon"}/>
-                <StatsCard mainText={ stats.stats!.totalTime.toString() } iconUrl={ClockIcon} iconAlt={"Clock icon"}/>
-                <StatsCard mainText={ stats.stats!.totalEnergy.toString() + "kcal" } iconUrl={EnergyIcon} iconAlt={"Energy icon"}/>
+                <StatsCard mainText={ formatTime(stats.stats!.totalTime) } iconUrl={ClockIcon} iconAlt={"Clock icon"}/>
+                <StatsCard mainText={ Intl.NumberFormat("de-DE").format(stats.stats.totalEnergy) + "kcal" } iconUrl={EnergyIcon} iconAlt={"Energy icon"}/>
             </div>
         </div>
     )
