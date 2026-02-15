@@ -3,11 +3,21 @@ type FormFieldProps = {
     placeholderText: string
     onChange: (value: number) => void
     subText?: string
+    errorText?: string
 }
 
 export function FormField(props: FormFieldProps) {
     return (
-        <div className="flex flex-col m-3">
+        <div className="flex flex-col m-3 relative">
+
+            {props.errorText && (
+                <div className="absolute -top-6 right-0 bg-red-500 text-primary text-[12px] px-2 py-1 rounded animate-bounce">
+                    {props.errorText}
+                    {/* Tiny arrow pointing down */}
+                    <div className="absolute -bottom-1 right-2 w-2 h-2 bg-red-500 rotate-45"></div>
+                </div>
+            )}
+
             <label className="text-dark font-semibold" >{props.displayText}</label>
             <input
                 type="number"

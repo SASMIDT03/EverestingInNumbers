@@ -19,8 +19,36 @@ export function RouteForm(props: RouteFormProps) {
         durationOfStops: 0,
     })
 
+    const [errors, setErrors] = useState<Partial<Record<keyof RideInformation, string>>>({});
+
     const updateField = (field: keyof RideInformation, newValue: number) => {
         setFormData({...formData, [field]: newValue});
+        // Clear Error when user is trying to fix it
+        if (errors[field]) {
+            setErrors(prev => {
+                const updatedErrors = { ...prev }
+                delete updatedErrors[field]
+                return updatedErrors
+            })
+        }
+    }
+
+    function checkFormData()  {
+        console.log("checkform called")
+        const tempErrors: Partial<Record<keyof RideInformation, string>> = {}
+
+        if (formData.climbingDistance <= 0) { tempErrors.climbingDistance = "Distance needs to be greater than 0";
+        console.log("euoioihoihoih")}
+        if (formData.elevationGain <= 0) { tempErrors.elevationGain = "Elevation gain needs to be greater than 0"; }
+        if (formData.climbingSpeed <= 0) { tempErrors.climbingSpeed = "Climbingspeed needs to be greater than 0"; }
+        if (formData.descendingSpeed <= 0) { tempErrors.descendingSpeed = "Descendingspeed needs to be greater than 0"; }
+        if (formData.totalWeight <= 0) { tempErrors.totalWeight = "Total weight needs to be greater than 0"; }
+
+        setErrors(tempErrors);
+
+        if (Object.keys(tempErrors).length === 0) {
+            props.onCalculate(formData);
+        }
     }
 
     return (
@@ -33,9 +61,11 @@ export function RouteForm(props: RouteFormProps) {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div> {/* Col 1 */}
                         <FormField displayText={"Distance of climb (km)"} placeholderText={"5km"}
-                                   onChange={(value) => updateField("climbingDistance", value)}/>
+                                   onChange={(value) => updateField("climbingDistance", value)}
+                                   errorText={errors.climbingDistance}/>
                         <FormField displayText={"Avg. climbing speed (km/h)"} placeholderText={"15km/h"}
-                                   onChange={(value) => updateField("climbingSpeed", value)}/>
+                                   onChange={(value) => updateField("climbingSpeed", value)}
+                                   errorText={errors.climbingSpeed}/>
                         <FormField displayText={"Avg. climbing watts (w)"} placeholderText={"200w"}
                                    onChange={(value) => updateField("climbingWatts", value)}
                                    subText={"Not required"}/>
@@ -45,18 +75,21 @@ export function RouteForm(props: RouteFormProps) {
                     </div>
                     <div> {/* Col 2 */}
                         <FormField displayText={"Elevation gain per lap (m)"} placeholderText={"100m"}
-                                   onChange={(value) => updateField("elevationGain", value)}/>
+                                   onChange={(value) => updateField("elevationGain", value)}
+                                   errorText={errors.elevationGain}/>
                         <FormField displayText={"Avg. descending speed (km/h)"} placeholderText={"40km/h"}
-                                   onChange={(value) => updateField("descendingSpeed", value)}/>
+                                   onChange={(value) => updateField("descendingSpeed", value)}
+                                   errorText={errors.descendingSpeed}/>
                         <FormField displayText={"Total weight (kg)"} placeholderText={"70kg"}
-                                   onChange={(value) => updateField("totalWeight", value)}/>
+                                   onChange={(value) => updateField("totalWeight", value)}
+                                   errorText={errors.totalWeight}/>
                         <FormField displayText={"Avg rest stop duration (min)"} placeholderText={"0min"}
                                    onChange={(value) => updateField("durationOfStops", value)}/>
                     </div>
                 </div>
 
                 <button
-                    onClick={() => props.onCalculate(formData)}
+                    onClick={checkFormData}
                     className="
                     w-full bg-dark rounded-lg text-primary p-2 text-lg cursor-pointer
                     py-2 px-4
