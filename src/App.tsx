@@ -39,6 +39,15 @@ function App() {
             </input>
             */}
 
+            <div className="bg-primary border-1 border-primary-shade rounded-lg w-[75vw] p-3 m-3">
+                <div className="text-xl font-bold">What is an Everesting?</div>
+                <p>Everesting is a cycling challenge where you pick one climb and repeat it until you've reached 8.849 meters of elevation gain - the height of Mount Everest. It's one of cycling's toughest challenges, testing your physical and mental endurance.</p>
+                <div className="grid md:grid-cols-2 gap-4">
+                    <p>Text text text</p>
+                    <p>more text more text</p>
+                </div>
+            </div>
+
             <div className="flex flex-row items-stretch">
                 <RouteForm onCalculate={handleCalculation}/>
                 <StatsDisplay stats={results}/>
