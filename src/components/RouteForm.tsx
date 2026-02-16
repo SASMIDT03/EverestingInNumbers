@@ -91,13 +91,13 @@ export function RouteForm(props: RouteFormProps) {
                 <button
                     onClick={checkFormData}
                     className="
-                    w-full bg-dark rounded-lg text-primary p-2 text-lg cursor-pointer
+                    w-full bg-green rounded-lg text-primary p-2 text-lg cursor-pointer
                     py-2 px-4
                     shadow-[0_4px_0_0_primary]
                     transition-all duration-75
                     active:shadow-none
                     active:translate-y-1
-                    hover:bg-dark-2">Calculate Everesting Stats</button>
+                    hover:bg-green-shade">Calculate Everesting Stats</button>
             </div>
         </div>
     )
