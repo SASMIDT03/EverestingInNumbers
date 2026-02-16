@@ -16,7 +16,7 @@ function App() {
     }
 
     return (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col min-h-screen items-center">
             <header className="
                 w-full h-[12vh] border-b-1 border-b-primary-shade
                 flex justify-center p-1">
@@ -41,17 +41,17 @@ function App() {
 
             <div className="bg-primary border-1 border-primary-shade rounded-lg w-[75vw] p-3 m-3">
                 <div className="text-xl font-bold">What is an Everesting?</div>
-                <p>Everesting is a cycling challenge where you pick one climb and repeat it until you've reached 8.849 meters of elevation gain - the height of Mount Everest. It's one of cycling's toughest challenges, testing your physical and mental endurance.</p>
-                <div className="grid md:grid-cols-2 gap-4">
-                    <p>Text text text</p>
-                    <p>more text more text</p>
-                </div>
+                <p>Everesting is a cycling challenge where you pick one climb, any climb, and repeat it until you've reached a total of 8.849 meters of elevation gain - the height of Mount Everest. It's one of cycling's toughest challenges, testing your physical and mental endurance.</p>
+                <p>This is a calculator for calculating statistics related to doing an everest including total number of reps, total distance and so on.</p>                <div className="grid md:grid-cols-2 gap-4">
+            </div>
             </div>
 
             <div className="flex flex-row items-stretch">
                 <RouteForm onCalculate={handleCalculation}/>
                 <StatsDisplay stats={results}/>
             </div>
+
+            <footer className="bg-dark h-[10vh] w-full"> </footer>
         </div>
     )
 }
