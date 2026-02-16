@@ -6,6 +6,8 @@
     --dark-2: #242424;
     --secondary: #F3F3F5;
     --red: #c1121f;
+    --green: #00A36C;
+    --green-shade: #01754e;
 
 }
 
@@ -17,6 +19,8 @@
     --color-dark-2: var(--dark-2);
     --color-secondary: var(--secondary);
     --color-red: var(--red);
+    --color-green: var(--green);
+    --color-green-shade: var(--green-shade);
 
     /* Fonts */
     --font-sans: "Ubuntu", sans-serif;
