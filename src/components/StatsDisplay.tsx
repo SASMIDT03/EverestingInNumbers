@@ -7,6 +7,7 @@ import ClockIcon from "../assets/clock.svg"
 import EnergyIcon from "../assets/energy.svg"
 import {useState} from "react";
 import {TimeModal} from "./modals/TimeModal.tsx";
+import type {StatsModalComponent} from "../utils/types/StatsModal.ts";
 
 type StatsDisplayProps = {
     stats: EverestingStats | null
@@ -23,7 +24,7 @@ export function StatsDisplay( stats: StatsDisplayProps) {
         </div>
     )
 
-    const modalComponents = {
+    const modalComponents: Record<string, StatsModalComponent> = {
         time: TimeModal
     }
 
@@ -54,7 +55,7 @@ export function StatsDisplay( stats: StatsDisplayProps) {
             <div
                 onClick={() => setActiveModalKey(null)}
                 className="fixed inset-0 bg-dark/64 flex items-center justify-center z-50">
-                <ActiveModal />
+                <ActiveModal stats={stats.stats} />
             </div>
         )}
 
