@@ -5,6 +5,8 @@ import DistanceIcon from "../assets/distance.svg"
 import LapsIcon from "../assets/repeat.svg"
 import ClockIcon from "../assets/clock.svg"
 import EnergyIcon from "../assets/energy.svg"
+import {useState} from "react";
+import {TimeModal} from "./modals/TimeModal.tsx";
 
 type StatsDisplayProps = {
     stats: EverestingStats | null
@@ -21,6 +23,13 @@ export function StatsDisplay( stats: StatsDisplayProps) {
         </div>
     )
 
+    const modalComponents = {
+        time: TimeModal
+    }
+
+    const [activeModalKey, setActiveModalKey] = useState<keyof typeof  modalComponents | null>(null)
+    const ActiveModal = activeModalKey ? modalComponents[activeModalKey] : null
+
     return (
         <div className="
             bg-primary border-1 border-primary-shade rounded-lg
@@ -33,9 +42,22 @@ export function StatsDisplay( stats: StatsDisplayProps) {
                 ">
                 <StatsCard mainText={ stats.stats!.totalDistance.toString() + "km"} iconUrl={DistanceIcon} iconAlt={"Distance icon"}/>
                 <StatsCard mainText={ stats.stats!.totalNumberOfLaps.toString() } iconUrl={LapsIcon} iconAlt={"Laps icon"}/>
-                <StatsCard mainText={ formatTime(stats.stats!.totalTime) } iconUrl={ClockIcon} iconAlt={"Clock icon"}/>
+                <StatsCard
+                    mainText={ formatTime(stats.stats!.totalTime) }
+                    iconUrl={ClockIcon} iconAlt={"Clock icon"}
+                    onClick={() => setActiveModalKey("time")}/>
                 <StatsCard mainText={ Intl.NumberFormat("de-DE").format(stats.stats.totalEnergy) + "kcal" } iconUrl={EnergyIcon} iconAlt={"Energy icon"}/>
             </div>
+
+
+        {ActiveModal && (
+            <div
+                onClick={() => setActiveModalKey(null)}
+                className="fixed inset-0 bg-dark/64 flex items-center justify-center z-50">
+                <ActiveModal />
+            </div>
+        )}
+
         </div>
     )
 }
