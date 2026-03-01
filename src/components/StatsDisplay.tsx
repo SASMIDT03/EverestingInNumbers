@@ -47,7 +47,7 @@ export function StatsDisplay( stats: StatsDisplayProps) {
                     mainText={ formatTime(stats.stats!.totalTime) }
                     iconUrl={ClockIcon} iconAlt={"Clock icon"}
                     onClick={() => setActiveModalKey("time")}/>
-                <StatsCard mainText={ Intl.NumberFormat("de-DE").format(stats.stats.totalEnergy) + "kcal" } iconUrl={EnergyIcon} iconAlt={"Energy icon"}/>
+                <StatsCard mainText={ Intl.NumberFormat("dk-DK").format(stats.stats.totalEnergy) + "kcal" } iconUrl={EnergyIcon} iconAlt={"Energy icon"}/>
             </div>
 
 
