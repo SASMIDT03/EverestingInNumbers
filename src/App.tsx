@@ -51,7 +51,7 @@ function App() {
                 <StatsDisplay stats={results}/>
             </div>
 
-            <footer className="bg-dark h-[10vh] w-full"> </footer>
+            <footer className="bg-dark h-[16vh] w-full"> </footer>
         </div>
     )
 }
