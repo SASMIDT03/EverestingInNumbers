@@ -80,7 +80,7 @@ export function RouteForm(props: RouteFormProps) {
                         <FormField displayText={"Avg. descending speed (km/h)"} placeholderText={"40km/h"}
                                    onChange={(value) => updateField("descendingSpeed", value)}
                                    errorText={errors.descendingSpeed}/>
-                        <FormField displayText={"Total weight (kg)"} placeholderText={"70kg"}
+                        <FormField displayText={"Weight including equipment (kg)"} placeholderText={"70kg"}
                                    onChange={(value) => updateField("totalWeight", value)}
                                    errorText={errors.totalWeight}/>
                         <FormField displayText={"Avg rest stop duration (min)"} placeholderText={"0min"}
