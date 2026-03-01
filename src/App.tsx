@@ -46,7 +46,7 @@ function App() {
             </div>
             </div>
 
-            <div className="flex flex-row items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <RouteForm onCalculate={handleCalculation}/>
                 <StatsDisplay stats={results}/>
             </div>
