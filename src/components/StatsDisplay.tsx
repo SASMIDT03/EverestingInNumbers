@@ -34,7 +34,7 @@ export function StatsDisplay( stats: StatsDisplayProps) {
     return (
         <div className="
             bg-primary border-1 border-primary-shade rounded-lg
-            p-6 m-6 w-[30vw] min-h-[51vh]
+            p-6 m-6 w-[35vw] min-h-[51vh]
             font-bold text-lg
             ">
             Your everesting stats
