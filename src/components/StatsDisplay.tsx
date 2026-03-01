@@ -4,7 +4,7 @@ import {StatsCard} from "./StatsCard.tsx";
 import DistanceIcon from "../assets/distance.svg"
 import LapsIcon from "../assets/repeat.svg"
 import ClockIcon from "../assets/clock.svg"
-import EnergyIcon from "../assets/energy.svg"
+import Flame from "../assets/flame.svg"
 import {useState} from "react";
 import {TimeModal} from "./modals/TimeModal.tsx";
 import type {StatsModalComponent} from "../utils/types/StatsModal.ts";
@@ -47,7 +47,7 @@ export function StatsDisplay( stats: StatsDisplayProps) {
                     mainText={ formatTime(stats.stats!.totalTime) }
                     iconUrl={ClockIcon} iconAlt={"Clock icon"}
                     onClick={() => setActiveModalKey("time")}/>
-                <StatsCard mainText={ Intl.NumberFormat("dk-DK").format(stats.stats.totalEnergy) + "kcal" } iconUrl={EnergyIcon} iconAlt={"Energy icon"}/>
+                <StatsCard mainText={ Intl.NumberFormat("dk-DK").format(stats.stats.totalEnergy) + "kcal" } iconUrl={Flame} iconAlt={"Energy icon"}/>
             </div>
 
 
