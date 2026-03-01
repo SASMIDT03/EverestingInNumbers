@@ -1,6 +1,6 @@
 import type {EverestingStats} from "../utils/types/EverestingStats.ts";
 import { formatTime } from "../utils/Formater.ts";
-import {StatsCard} from "./StatsCard.tsx";
+import StatsCard from "./StatsCard.tsx";
 import DistanceIcon from "../assets/distance.svg"
 import LapsIcon from "../assets/repeat.svg"
 import ClockIcon from "../assets/clock.svg"
